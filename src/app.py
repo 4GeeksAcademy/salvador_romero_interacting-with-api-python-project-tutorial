@@ -3,7 +3,6 @@ import spotipy
 import pandas as pd
 from dotenv import load_dotenv
 from spotipy.oauth2 import SpotifyClientCredentials
-import pandas as pd
 import matplotlib.pyplot as plt
 
 # load the .env file variables
@@ -30,6 +29,9 @@ top3 = df.sort_values('Popularity',ascending=False)[:3]
 print(top3)
 
 plt.scatter(df['Duration'],df['Popularity'])
+plt.title("Trueno")
 plt.xlabel('Duration')
 plt.ylabel("Popularity")
-plt.show()
+plt.savefig("trueno_pop.png")
+
+# No hay ninguna relación clara entre la duración y la popularidad de las canciones
